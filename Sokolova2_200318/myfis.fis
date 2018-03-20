@@ -1,0 +1,14 @@
+[System]
+Name='myfis'
+Type='sugeno'
+Version=2.0
+NumInputs=0
+NumOutputs=0
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Rules]

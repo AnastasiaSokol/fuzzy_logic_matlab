@@ -1,0 +1,49 @@
+[System]
+Name='FIS'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=5
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='x1'
+Range=[0 1]
+NumMFs=2
+MF1='funL_X_1':'trimf',[0 0.2760585 0.552117]
+MF2='funH_X_1':'trimf',[0.552117 0.7760585 1]
+
+[Input2]
+Name='x2'
+Range=[0 1]
+NumMFs=3
+MF1='funL_X_2':'trimf',[0 0.2690865 0.538173]
+MF2='funH_X_2':'trimf',[0.553328 0.776664 1]
+MF3='funA_X_2':'trimf',[0.538173 0.5457505 0.553328]
+
+[Input3]
+Name='x3'
+Range=[0 1]
+NumMFs=2
+MF1='funL_X_3':'trimf',[0 0.2729365 0.545873]
+MF2='funH_X_3':'trimf',[0.545873 0.7729365 1]
+
+[Output1]
+Name='class'
+Range=[0 1]
+NumMFs=3
+MF1='classC':'constant',[3]
+MF2='classB':'constant',[2]
+MF3='classA':'constant',[1]
+
+[Rules]
+1 0 0, 1 (1) : 1
+2 0 1, 1 (1) : 1
+2 1 2, 1 (1) : 1
+2 3 2, 3 (1) : 1
+2 2 2, 2 (1) : 1
